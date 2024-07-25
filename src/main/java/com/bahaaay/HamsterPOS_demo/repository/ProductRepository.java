@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    List<Product> findByQuantityLessThanEqual(Integer reorderLevel);
 
 
     @Query("SELECT p FROM Product p WHERE p.quantity <= p.reorderLevel")
